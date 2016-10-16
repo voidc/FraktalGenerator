@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presets>
+    <LSystem name="Koch-Kurve">
+        <axiom>F</axiom>
+        <rules>
+            <rule symbol="F">F-F++F-F</rule>
+        </rules>
+        <angle>60</angle>
+    </LSystem>
+    <LSystem name="Sierpinski-Dreieck">
+        <axiom>A+A+B</axiom>
+        <rules>
+            <rule symbol="A">AA</rule>
+            <rule symbol="B">B+A-B-A+B</rule>
+        </rules>
+        <angle>120</angle>
+    </LSystem>
+</presets>

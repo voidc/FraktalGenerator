@@ -1,0 +1,22 @@
+TODO
+====
+
+* Load fractals from external file (JSON/XML)
+* Save custom fractals
+* Add presets
+* Bundle as .exe with JRE
+* Improve design
+* Highlight unused rules
+
+* Infinity zoom
+* LSystem render stack (brackets)
+* Colored lines
+* Help
+* Angle randomization
+* Move camera (zoom to mouse)
+
+x Separate render/ui thread
+x LSystem editor UX (rules)
+x Renderer optimization
+x Save fractals as image
+x Max depth based on growth between iterations
