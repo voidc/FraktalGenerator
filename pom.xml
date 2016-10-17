@@ -18,8 +18,40 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.7.0</version>
+                <configuration>
+                    <mainClass>io.github.voidc.fractalgen.Main</mainClass>
+                    <verbose>true</verbose>
+                    <vendor>Dominik Stolz</vendor>
+                    <bundler>EXE</bundler>
+                    <needMenu>true</needMenu>
+                    <appName>FraktalGenerator</appName>
+                    <bundleArguments>
+                        <systemWide>true</systemWide>
+                    </bundleArguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <!-- required before build-native -->
+                        <id>create-jfxjar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build-jar</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>create-native</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build-native</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-
 </project>

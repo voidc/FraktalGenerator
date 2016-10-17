@@ -1,6 +1,5 @@
 package io.github.voidc.fractalgen;
 
-import io.github.voidc.fractalgen.renderer.IterativeLSystemRenderer;
 import io.github.voidc.fractalgen.renderer.LSystemRenderer;
 import io.github.voidc.fractalgen.renderer.RecursiveLSytsemRenderer;
 import io.github.voidc.fractalgen.renderer.RenderedLSystem;
@@ -24,8 +23,6 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class FractalGenController implements Initializable {
@@ -261,7 +258,7 @@ public class FractalGenController implements Initializable {
         saveDialog.getExtensionFilters().add(new FileChooser.ExtensionFilter("PNG", "*.png"));
 
         File saveFile = saveDialog.showSaveDialog(canvas.getScene().getWindow());
-        if(saveFile != null) {
+        if (saveFile != null) {
             try {
                 ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", saveFile);
             } catch (IOException e) {
@@ -271,7 +268,7 @@ public class FractalGenController implements Initializable {
     }
 
     private void loadPresets() {
-        for(LSystem ls : LSystem.presets) {
+        for (LSystem ls : LSystem.presets) {
             presetsBox.getItems().add(ls.clone());
         }
     }
@@ -302,7 +299,7 @@ public class FractalGenController implements Initializable {
             rules.getItems().add(rules.getItems().size() - 1, ruleSymbol + "→" + newRule);
             rules.getSelectionModel().select(rules.getItems().size() - 2);
             newRuleSymbol = getNewRuleSymbol();
-            if(newRuleSymbol == 0) { //no more unused symbols
+            if (newRuleSymbol == 0) { //no more unused symbols
                 rules.getItems().remove(rules.getItems().size() - 1);
             }
         } else { //edit rule

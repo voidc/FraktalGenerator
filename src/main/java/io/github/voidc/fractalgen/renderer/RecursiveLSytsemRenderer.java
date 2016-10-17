@@ -16,12 +16,7 @@ public class RecursiveLSytsemRenderer extends LSystemRenderer {
                     continue;
                 default:
                     if (depth < maxDepth) {
-                        char symbol = rule.charAt(i);
-                        String newRule = lSystem.getRules().get(symbol);
-                        if(newRule.length() == 1 && newRule.charAt(0) == symbol)
-                            line();
-                        else
-                            renderRule(lSystem, newRule, depth + 1);
+                        renderRule(lSystem, lSystem.getRules().get(rule.charAt(i)), depth + 1);
                     } else {
                         line();
                     }

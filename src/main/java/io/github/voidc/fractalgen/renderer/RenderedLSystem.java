@@ -11,7 +11,7 @@ public class RenderedLSystem {
             new RenderedLSystem(new double[0], new double[0], new Rectangle2D(0, 0, 1, 1));
 
     public RenderedLSystem(double[] xPoints, double[] yPoints, Rectangle2D boundingBox) {
-        if(xPoints.length != yPoints.length)
+        if (xPoints.length != yPoints.length)
             throw new IllegalArgumentException();
 
         this.xPoints = xPoints;

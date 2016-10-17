@@ -2,71 +2,62 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-
-<BorderPane fx:id="root" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.voidc.fractalgen.FractalGenController">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="root" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.76-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.voidc.fractalgen.FractalGenController">
     <padding>
-        <Insets bottom="10" left="10" right="10" top="10" />
+        <Insets bottom="10" left="10" right="10" top="10"/>
     </padding>
     <left>
         <VBox prefHeight="500" prefWidth="300" spacing="8.0">
             <padding>
-                <Insets right="10" />
+                <Insets right="10"/>
             </padding>
             <HBox alignment="BASELINE_LEFT" spacing="8.0">
-                <Label text="L-System:" />
-                <ChoiceBox fx:id="presetsBox" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                <Label text="L-System:"/>
+                <ChoiceBox fx:id="presetsBox" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS"/>
             </HBox>
             <HBox alignment="BASELINE_LEFT" spacing="8.0">
-                <Label text="Axiom:" />
-                <TextField fx:id="axiomInput" HBox.hgrow="ALWAYS" />
+                <Label text="Axiom:"/>
+                <TextField fx:id="axiomInput" HBox.hgrow="ALWAYS"/>
             </HBox>
-            <Label text="Produktionsregeln:" />
-            <ListView fx:id="rules" />
+            <Label text="Produktionsregeln:"/>
+            <ListView fx:id="rules"/>
             <HBox alignment="BASELINE_LEFT" spacing="8.0">
-                <Label fx:id="ruleInputLabel" text="A→" />
-                <TextField fx:id="ruleInput" HBox.hgrow="ALWAYS" />
-                <Button fx:id="ruleInputButton" text="Hinzufügen" />
-            </HBox>
-            <HBox alignment="BASELINE_LEFT" spacing="8.0">
-                <Label text="Winkel:" />
-                <TextField fx:id="angleInput" HBox.hgrow="ALWAYS" />
+                <Label fx:id="ruleInputLabel" text="A→"/>
+                <TextField fx:id="ruleInput" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="ruleInputButton" text="Hinzufügen"/>
             </HBox>
             <HBox alignment="BASELINE_LEFT" spacing="8.0">
-                <Button fx:id="renderButton" text="Berechnen" />
-                <Button fx:id="resetButton" text="Zurücksetzen" />
-                <Button fx:id="exportButton" text="Als Bild speichern" />
+                <Label text="Winkel:"/>
+                <TextField fx:id="angleInput" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            <HBox alignment="BASELINE_LEFT" spacing="8.0">
+                <Button fx:id="renderButton" text="Berechnen"/>
+                <Button fx:id="resetButton" text="Zurücksetzen"/>
+                <Button fx:id="exportButton" text="Als Bild speichern"/>
             </HBox>
         </VBox>
     </left>
     <center>
         <Pane fx:id="canvasPane" style="-fx-background-color: white;">
-            <Canvas fx:id="canvas" />
+            <Canvas fx:id="canvas"/>
         </Pane>
     </center>
     <bottom>
         <GridPane alignment="center" hgap="10" prefHeight="100.0" prefWidth="900.0" vgap="10">
             <padding>
-                <Insets left="300" />
+                <Insets left="300"/>
             </padding>
-                <Label text="Detailtiefe:" />
-                <Slider fx:id="detailSlider" blockIncrement="1.0" majorTickUnit="5.0" max="10.0" minorTickCount="0" value="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
-                <Label text="Schritt:" GridPane.rowIndex="1" />
-                <Slider fx:id="stepSlider" value="100.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
-                <Label fx:id="detailText" text="4" GridPane.columnIndex="3" />
-                <Label fx:id="stepText" text="100%" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Detailtiefe:"/>
+            <Slider fx:id="detailSlider" blockIncrement="1.0" majorTickUnit="5.0" max="10.0" minorTickCount="0"
+                    value="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+            <Label text="Schritt:" GridPane.rowIndex="1"/>
+            <Slider fx:id="stepSlider" value="100.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"
+                    GridPane.rowIndex="1"/>
+            <Label fx:id="detailText" text="4" GridPane.columnIndex="3"/>
+            <Label fx:id="stepText" text="100%" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
         </GridPane>
     </bottom>
 </BorderPane>

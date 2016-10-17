@@ -1,6 +1,5 @@
 package io.github.voidc.fractalgen;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,10 +18,6 @@ public class LSystem {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getAxiom() {
@@ -48,18 +43,6 @@ public class LSystem {
     @Override
     public String toString() {
         return name;
-    }
-
-    public boolean isRuleUsed(char ruleSymbol) {
-        if(axiom.indexOf(ruleSymbol) != -1)
-            return true;
-
-        for(char s : rules.keySet()) {
-            if(s != ruleSymbol && rules.get(s).indexOf(ruleSymbol) != -1)
-                return true;
-        }
-
-        return false;
     }
 
     @Override
@@ -102,14 +85,7 @@ public class LSystem {
         return result;
     }
 
-    public static LSystem[] presets = new LSystem[] {
-            koch(),
-            sierpinski(),
-            hilbert(),
-            peano(),
-            dragon(),
-            empty()
-    };
+    public static LSystem[] presets = new LSystem[] {koch(), sierpinski(), hilbert(), dragon(), empty()};
 
     public static LSystem koch() {
         LSystem koch = new LSystem("Koch-Kurve");
@@ -136,16 +112,6 @@ public class LSystem {
         hilbert.getRules().put('C', "C");
         hilbert.setAngle(Math.toRadians(90));
         return hilbert;
-    }
-
-    public static LSystem peano() {
-        LSystem peano = new LSystem("Peano-Kurve");
-        peano.setAxiom("A");
-        peano.getRules().put('A', "ACBCA+C+BCACB-C-ACBCA");
-        peano.getRules().put('B', "BCACB-C-ACBCA+C+BCACB");
-        peano.getRules().put('C', "C");
-        peano.setAngle(Math.toRadians(90));
-        return peano;
     }
 
     public static LSystem dragon() {
